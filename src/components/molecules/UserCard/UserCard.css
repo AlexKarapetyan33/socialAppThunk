@@ -1,0 +1,19 @@
+.usercard {
+    width: 300px;
+    border: 1px solid;
+    background-color: orange;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.image{
+        width: 250px;
+        height: 250px;
+        border: 1px solid orange;
+        border-radius: 50%;
+    }
