@@ -8,8 +8,8 @@ const instance = axios.create({
 
 
 export const socialApi = {
-    async getAllUsers() {
-        const response = await instance.get('/users?count=100')
+    async getAllUsers(page) {
+        const response = await instance.get(`/users?page=${page}&count=100`)
         return response.data.items
     },
     async getProfile(id){

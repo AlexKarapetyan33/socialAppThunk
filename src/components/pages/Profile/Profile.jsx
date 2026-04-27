@@ -13,7 +13,10 @@ export const Profile = () => {
     const { id } = useParams()
 
     
+    
     return (
-        <div>Profile : {id}</div>
+        <div>
+            <h3>{profile?.data.fullName}</h3>
+        </div>
     )
 }

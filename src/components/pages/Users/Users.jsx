@@ -3,22 +3,25 @@ import { UsersContainer } from "../../organisms/UsersContainer/UsersContainer"
 import { useEffect } from "react"
 import { socialApi } from "../../../api/api"
 import { getAllTC } from "../../../reducers/getAllReducer"
+import { Pageination } from "../../molecules/Pageination/Pageination"
 
 
 
 export const Users = () => {
 
-    const dispatch = useDispatch()
-    const users = useSelector((state) => state.usersData.users)
+  const dispatch = useDispatch()
+  const users = useSelector((state) => state.usersData.users)
+  const {page} = useSelector((state) => state.usersData)
 
-    useEffect(() => {
-        dispatch(getAllTC())
-    }, [])
+  useEffect(() => {
+    dispatch(getAllTC(page))
+  }, [page])
 
 
   return (
     <div>
-        <UsersContainer users={users}/>
+      <Pageination />
+      <UsersContainer users={users} />
     </div>
   )
 }

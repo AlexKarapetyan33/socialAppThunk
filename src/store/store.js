@@ -9,4 +9,7 @@ const rootReducer = combineReducers({
     profileData : getProfileReducer
 })
 
+
 export const store = createStore(rootReducer, applyMiddleware(thunk));
+
+window.store = store
