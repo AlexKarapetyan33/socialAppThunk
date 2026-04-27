@@ -15,5 +15,9 @@ export const socialApi = {
     async getProfile(id){
         const response = await instance.get(`/profile/${id}`)
         return response
+    },
+    async login(body){
+        const response = await instance.post('/auth/login', body)
+        return response
     }
 }

@@ -1,17 +1,18 @@
 import axios from "axios"
 import { useState } from "react"
+import { loginTC } from "../../../reducers/loginReducer"
+import { useDispatch } from "react-redux"
 
 
 
 export const Home = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const dispatch = useDispatch()
   
   const handleSubmit = (e) => {
     e.preventDefault()
-
-    axios.post('https://social-network.samuraijs.com/api/1.0/auth/login', {email, password})
-    .then((res) => console.log(res.data))
+    dispatch(loginTC({email : 'alexkarapetyan009@gmail.com', password : 'Gazankrolik1234.'}))
   }
   return (
     <div>
